@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thaddeus | Professional Digital Solutions</title>
+  <meta name="description" content="Thaddeus — Professional digital solutions. We build modern websites, web applications and digital products for businesses.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thaddeus | Professional Digital Solutions">
+  <meta property="og:description" content="We build modern websites, web applications and digital products for businesses.">
+  <meta property="og:image" content="https://thaddeus-tech.vercel.app/preview.PNG">
+  <meta property="og:url" content="https://thaddeus-tech.vercel.app">
+  <meta property="og:site_name" content="Thaddeus">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Thaddeus | Professional Digital Solutions">
+  <meta name="twitter:description" content="We build modern websites, web applications and digital products for businesses.">
+  <meta name="twitter:image" content="https://thaddeus-tech.vercel.app/preview.PNG">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f5f5f7;
+      --text: #1d1d1f;
+      --text-secondary: #6e6e73;
+      --accent: #0071e3;
+      --accent-hover: #0077ed;
+      --border: #d2d2d7;
+      --card: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.47059;
+      font-weight: 400;
+      letter-spacing: -0.022em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ========== NAV ========== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .nav-container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0 22px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      font-size: 12px;
+      color: var(--text);
+      text-decoration: none;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      font-size: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 400;
+    }
+
+    .nav-cta:hover {
+      text-decoration: underline;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--text);
+      padding: 4px;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 22px 20px;
+    }
+
+    .mobile-nav.open {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      padding: 12px 0;
+      font-size: 17px;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
+      color: var(--accent);
+      margin-top: 8px;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      padding: 140px 22px 100px;
+      text-align: center;
+      background: var(--bg);
+    }
+
+    .hero-content {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.07;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 21px;
+      line-height: 1.381;
+      font-weight: 400;
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 980px;
+      font-size: 17px;
+      font-weight: 400;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent);
+      border: none;
+    }
+
+    .btn-secondary:hover {
+      text-decoration: underline;
+    }
+
+    /* ========== STATS BAR ========== */
+    .stats-bar {
+      background: var(--bg-soft);
+      padding: 48px 22px;
+      border-top: 1px solid #e8e8ed;
+      border-bottom: 1px solid #e8e8ed;
+    }
+
+    .stats-grid {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+
+    .stat-item h3 {
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .stat-item p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* ========== SECTIONS ========== */
+    section {
+      padding: 100px 22px;
+    }
+
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto 64px;
+    }
+
+    .section-header h2 {
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .section-header p {
+      font-size: 19px;
+      color: var(--text-secondary);
+      line-height: 1.42;
+    }
+
+    /* ========== SERVICES ========== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      background: var(--bg-soft);
+      border-radius: 18px;
+      padding: 36px 28px;
+      transition: transform 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: scale(1.02);
+    }
+
+    .service-icon {
+      width: 44px;
+      height: 44px;
+      background: #e8f0fe;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: var(--accent);
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .service-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ========== ABOUT ========== */
+    .about {
+      background: var(--bg-soft);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-content h2 {
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+      color: var(--text);
+    }
+
+    .about-content p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .about-visual {
+      background: #fff;
+      border-radius: 20px;
+      height: 360px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+
+    /* ========== PROCESS ========== */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .process-card {
+      text-align: center;
+      padding: 20px 12px;
+    }
+
+    .process-number {
+      width: 36px;
+      height: 36px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 auto 16px;
+    }
+
+    .process-card h3 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .process-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials {
+      background: var(--bg-soft);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 32px 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .testimonial-card p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #e8f0fe;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .author-info h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .author-info span {
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    /* ========== CTA ========== */
+    .cta-section {
+      padding: 100px 22px;
+      text-align: center;
+    }
+
+    .cta-box {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .cta-box h2 {
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .cta-box p {
+      font-size: 19px;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+    }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: var(--bg-soft);
+      border-top: 1px solid #e8e8ed;
+      padding: 48px 22px 32px;
+    }
+
+    .footer-grid {
+      max-width: 980px;
+      margin: 0 auto 40px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer-brand .logo {
+      font-size: 19px;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      max-width: 240px;
+      line-height: 1.5;
+    }
+
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--text);
+    }
+
+    .footer-bottom {
+      max-width: 980px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid #e8e8ed;
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 834px) {
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 19px;
+      }
+
+      .section-header h2,
+      .about-content h2,
+      .cta-box h2 {
+        font-size: 32px;
+      }
+
+      .services-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 120px 18px 70px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .process-grid,
+      .stats-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">Thaddeus</a>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#testimonials">Clients</a>
+        <a href="#contact" class="nav-cta">Get Started</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#services" onclick="closeMenu()">Services</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#process" onclick="closeMenu()">Process</a>
+      <a href="#testimonials" onclick="closeMenu()">Clients</a>
+      <a href="#contact" onclick="closeMenu()">Get Started</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Professional digital solutions that <span>drive growth</span></h1>
+      <p>Thaddeus helps businesses create modern websites, reliable web applications and digital experiences that convert visitors into customers.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Start a Project</a>
+        <a href="#services" class="btn btn-secondary">Learn more →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-bar">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h3>120+</h3>
+        <p>Projects Delivered</p>
+      </div>
+      <div class="stat-item">
+        <h3>85+</h3>
+        <p>Clients Served</p>
+      </div>
+      <div class="stat-item">
+        <h3>98%</h3>
+        <p>Satisfaction Rate</p>
+      </div>
+      <div class="stat-item">
+        <h3>5+</h3>
+        <p>Years Experience</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <h2>What we deliver</h2>
+        <p>End-to-end digital solutions designed to help your business grow with clarity and quality.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Website Development</h3>
+          <p>Clean, fast and responsive websites built to look professional and convert visitors into customers.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Web Applications</h3>
+          <p>Custom web applications with intuitive interfaces, solid performance and reliable functionality.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>UI / UX Design</h3>
+          <p>Thoughtful interface design focused on usability, clarity and a polished user experience.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚙️</div>
+          <h3>Backend & APIs</h3>
+          <p>Stable backend systems and APIs that power your applications and keep your data secure.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚀</div>
+          <h3>Performance & SEO</h3>
+          <p>Optimization for speed, security and search visibility so your product performs at its best.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🛠️</div>
+          <h3>Support & Maintenance</h3>
+          <p>Ongoing updates, monitoring and support to keep your digital products running smoothly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2>Focused on quality, clarity and results</h2>
+          <p>Thaddeus is a digital practice that helps businesses build a strong online presence through modern technology and disciplined design.</p>
+          <p>We value clear communication, reliable delivery and work that genuinely supports your business goals.</p>
+        </div>
+        <div class="about-visual">💼</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process">
+    <div class="container">
+      <div class="section-header">
+        <h2>How we work</h2>
+        <p>A clear and transparent process so you always know where your project stands.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="process-number">1</div>
+          <h3>Discovery</h3>
+          <p>We understand your goals, audience and requirements.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-number">2</div>
+          <h3>Design</h3>
+          <p>We create clean designs and refine them with your feedback.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-number">3</div>
+          <h3>Development</h3>
+          <p>We build with clean code and modern, reliable technology.</p>
+        </div>
+        <div class="process-card">
+          <div class="process-number">4</div>
+          <h3>Launch</h3>
+          <p>We launch your product and provide ongoing support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <h2>Client feedback</h2>
+        <p>What businesses say after working with us.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p>“Thaddeus delivered a clean, professional website that improved how customers perceive our business. Reliable and thorough.”</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AK</div>
+            <div class="author-info">
+              <h4>Adebayo K.</h4>
+              <span>CEO, BrightPath Ltd</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p>“Clear communication and solid delivery. Our web application is fast, stable and easy for the team to use every day.”</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SO</div>
+            <div class="author-info">
+              <h4>Sarah O.</h4>
+              <span>Operations Manager</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p>“Professional, responsive and skilled. They helped us move from an outdated site to a modern digital presence.”</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JT</div>
+            <div class="author-info">
+              <h4>James T.</h4>
+              <span>Founder, TechStart NG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section" id="contact">
+    <div class="cta-box">
+      <h2>Ready to start your project?</h2>
+      <p>Share your idea and we’ll help you turn it into a reliable digital product.</p>
+      <a href="mailto:hello@thaddeus.dev" class="btn btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Thaddeus</a>
+        <p>Professional digital solutions for businesses that value quality and clarity.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Website Development</a>
+        <a href="#services">Web Applications</a>
+        <a href="#services">UI / UX Design</a>
+        <a href="#services">Support</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#testimonials">Clients</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="mailto:hello@thaddeus.dev">Email</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Copyright © 2026 Thaddeus. All rights reserved.</span>
+      <span>Nigeria</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+      menuBtn.textContent = mobileNav.classList.contains('open') ? '✕' : '☰';
+    });
+
+    function closeMenu() {
+      mobileNav.classList.remove('open');
+      menuBtn.textContent = '☰';
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!menuBtn.contains(e.target) && !mobileNav.contains(e.target)) {
+        closeMenu();
+      }
+    });
+  </script>
+</body>
+</html>
